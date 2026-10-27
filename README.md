@@ -55,3 +55,8 @@ pylint $(git ls-files '*.py')
 
 - Plan and extra names are case-insensitive and are normalised to uppercase.
 - A repeated extra counts once.
+
+## Continuous integration
+
+- **Jenkins** (job `gym-membership-quote-ci`): runs `pytest` on every push to `main`, triggered by a GitHub webhook, and publishes the JUnit report.
+- **GitHub Actions** (`.github/workflows/ci.yml`): runs `pytest` and `pylint` on every pull request to `main`.
