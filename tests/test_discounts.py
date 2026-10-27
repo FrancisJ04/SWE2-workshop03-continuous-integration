@@ -57,3 +57,18 @@ def test_apply_special_offer_exactly_200():
 def test_apply_special_offer_below_200():
     """Amount below 200 has no offer."""
     assert apply_special_offer(Decimal("150")) == Decimal("150")
+
+
+def test_apply_premium_surcharge_with_premium():
+    """15% surcharge applied."""
+    assert apply_premium_surcharge(Decimal("187"), True) == Decimal("215.05")
+
+
+def test_apply_premium_surcharge_with_premium_2():
+    """15% surcharge applied to another amount."""
+    assert apply_premium_surcharge(Decimal("358"), True) == Decimal("411.70")
+
+
+def test_apply_premium_surcharge_without_premium():
+    """No surcharge if premium is false."""
+    assert apply_premium_surcharge(Decimal("100"), False) == Decimal("100")

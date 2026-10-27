@@ -20,3 +20,10 @@ def apply_special_offer(amount: Decimal) -> Decimal:
     if amount > Decimal("200"):
         return amount - Decimal("20")
     return amount
+
+
+def apply_premium_surcharge(amount: Decimal, has_premium: bool) -> Decimal:
+    """Apply a 15% surcharge if a premium extra is selected (R6)."""
+    if has_premium:
+        return amount * PREMIUM_SURCHARGE_RATE
+    return amount
