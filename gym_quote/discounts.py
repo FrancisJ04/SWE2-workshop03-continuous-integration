@@ -11,3 +11,12 @@ def apply_group_discount(amount: Decimal, members: int) -> Decimal:
     if members >= 2:
         return amount * GROUP_DISCOUNT_RATE
     return amount
+
+
+def apply_special_offer(amount: Decimal) -> Decimal:
+    """Apply the exclusive special offer based on the amount (R5)."""
+    if amount > Decimal("400"):
+        return amount - Decimal("50")
+    if amount > Decimal("200"):
+        return amount - Decimal("20")
+    return amount
