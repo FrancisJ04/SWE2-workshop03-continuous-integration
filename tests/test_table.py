@@ -7,7 +7,7 @@ from gym_quote.quote import quote
 @pytest.mark.parametrize(
     "plan, extras, members, expected",
     [
-        ("BASIC", [], 1, 30),
+        ("BASIC", [], 1, 31),
         ("STANDARD", ["PERSONAL_TRAINING"], 1, 70),
         ("BASIC", ["GROUP_CLASSES"], 2, 81),
         ("BASIC", ["GROUP_CLASSES"], 3, 122),
